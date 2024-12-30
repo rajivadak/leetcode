@@ -1,0 +1,8 @@
+        // Check for overflow before updating the result
+        if (result > INT_MAX / 10 || (result == INT_MAX / 10 && digit > 7)) {
+            return 0; // Positive overflow
+        }
+        if (result < INT_MIN / 10 || (result == INT_MIN / 10 && digit < -8)) {
+            return 0; // Negative overflow
+        }
+understand the the above overflow concept:
