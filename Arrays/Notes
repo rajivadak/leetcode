@@ -1,0 +1,15 @@
+C & C++ concepts
+
+Arrays:
+| Memory space |
+| --- |
+| HEAP |
+| Stack |
+| Main |
+| Code Section |
+
+
+
+
+
+Variable sized arrays cannot be initialized
