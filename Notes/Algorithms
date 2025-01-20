@@ -1,0 +1,51 @@
+Algorithms
+
+Divided in two sections:
+
+Algorithms:
+1. Design - writing code/design in statements and notes format. 
+Those who have domain knowledge they wil make the design.
+Any language can be used until its understanble by the team
+It us H/W-S/W independent.
+Analyze the algorithm to check is it is efficient and achieving the target purpose.
+
+Program:
+1. Implementation - converting the design to code
+Programmer will write the code
+This is written using only programming language
+It is dependent on the H/W & OS used
+Testing is required to confirm the proper working.
+
+---------------------------------------------------------
+
+Priori Analysis: We can equate to algorithm section as stated above. Added feature in this is the inclusion of time-space function.
+
+Posterion Testing: We can equate it to program as stated above. Added feature in this is the inclusion of watch-time and bytes.
+
+Info:
+time-space function- 
+watch-time & bytes- 
+
+---------------------------------------------------------
+
+Charachteristic of algorithm:
+
+1. Input - can/should take 0 or more input
+2. Output - atleast 1 output
+3. Definiteness - should be non-ambiguous
+4. Finiteness - duration of program should be finite
+5. Effectiveness - avoid unnecessary statements and procedures
+
+---------------------------------------------------------
+
+How to write an Algorithm:
+
+Any syntax can be used, but it should be understanble by all team.
+
+criterion to consider while writing an Algorithm:
+1. Time 
+2. Space
+3. N/W consumption and channel method
+4. Power consumption
+5. Number of CPU registers being consumed
+
