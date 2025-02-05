@@ -4,6 +4,7 @@ Leetcode Statistics:
 
 
 Next Action:
-- do 4 modules of C
-- do 4 modules of C++
+- do 5 modules of C
+- do 5 modules of C++
+- do 4 modules of dsa
 - move on to game_dev
