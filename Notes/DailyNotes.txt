@@ -1,0 +1,210 @@
+5/2/25 Wednesday
+
+C programming
+
+Bitwise operators
+
+	- bitwise operator and shift operators
+	- operates in bits in integer values
+
+Cast operator: the type cast operator has a higher precedence than all the arithmetic operators except the unary minus and unary plus operator
+	(int)21.51+(int)26.99 -> 21+26
+
+sizeof operator:
+	evaluated at compile time and not runtime, unless a variable-length array is used in its argument
+
+Operator precedence:
+
+highest to lowest as we go to the bottom-
+
+Postfix: () [] -> . ++ -- : Left to right
+Unary: + - ! ~ ++ -- (type) * & sizeof : Right to Left 
+Multiplicative: * / % : Left to right
+Additive: + - : Left to right
+Shift: << >> : Left to right
+Relational: < <= > >= :Left to right
+Equality: == != : Left to right
+Bitwise AND: & : Left to right
+Bitwise XOR: ^ : Left to right
+Bitwise OR: | : Left to right
+Logical AND: && : Left to right
+Logical OR: || : Left to right
+Conditional: ?: : Right to Left
+Assignment: = += -= *= /= %= >>= <<= &= ^= |= : Right to Left
+Comma: , : Left to right
+
+6/2/25 Thursday
+
+C++ language:
+	
+	C++ Classes:
+		
+		class Point
+		{
+			int m_x = 0;	//private[hungarian notation]
+			int m_y = 0;	//private[hungarian notation]
+		public:
+			Point(int x, int y);
+			int getX();
+			int getY();
+		};
+
+DSA programming
+
+	Pointers:
+		- the program can directly access the code area and the stack memory
+		- program cannot acces the heap memory
+		- Heap memory is external to the program
+		- So we use pointer to access the Heap memory
+		- Major advantages of the pointers is accessing the resources which are outside of the program
+		- also pointers are used for passing parameters
+		- whenever we declare a variable, it will be inside stack
+		- we use malloc to allocate/access memory in heap
+		- to use malloc, we need to use #include <stdlib.h>
+		- syntax of malloc
+			int *p;
+			//p = (int*)malloc(<size of array>*sizeof(<datatype>));
+			p = (int*)malloc(5*sizeof(int)); //syntax in c language
+			p = new int[5]; //syntaxin c++
+		- as malloc returns void, so we are type casting malloc with (int*)
+		- (int*) as in for integer pointer
+		- We use the * in pointer only two times, once during declaration and once during dereferencing the pointer
+		- We don't use "&" when we are giving any array name to a pointer, so we can declare an array with pointer as given below:
+			int *p;
+			int A[5]={........};
+			p=A; //correct syntax
+		- when we dynamically creating/allocating any memory in heap, we must release the memory using the keyword 
+			delete [ ]p; // in c++
+			free(p);     // in c
+		- we will be using this delete/free feature when the programs are too long and extensive
+		- Every pointer takes same amount of memory
+		- Size of pointer is independent of the datatype
+		
+	Reference
+		-only available in c++, not available in any other language
+		-a nickname given to a variable
+		- suppose the below code:
+			int a=10;
+			int &r=a; //here r is referenced to a, i.e r is the nickname for a
+		-having reference in c is useful for passing parameters
+		-instead of pointers, we can use references in small programs
+		- references must be initialized with the value at the same time when it is declared
+		- reference is not the same as a pointer
+	
+C++ in game_dev
+
+	Books: SFML Game development by example,
+	Beginning C++ through game programming
+	
+	SFML - simple and fast multimedia language
+	
+	game designing is different from game programming - search on that
+	
+	
+	Game engines - learning to make one from scratch in this course
+		
+	ECS Game programming - Entities, Components, Systems.
+		Is a software design paradigm, and can be used for all software, not limited to gaming only
+	
+	Object Oriented Programming - 
+		Object Oriented programming used the concept of Objects and Inheritance to implement specific functionality
+		Object Oriented design (in games) is the process of strictly using OOP in order to design the architecture of the game engine and the entities within it.
+		
+		Entity - Anything object in the game: player, platform, tile, design
+		Component - properties attached to entities
+			Components are pure data
+		Systems - Code/logic that drives the behaviour in the game
+			movement, rendering, sound, physics 
+			
+	Engine Architecture:
+	
+		Game Engine
+			> Scene
+				> Systems
+				> EntityManager [Factory data manager] ***important***
+					> Entity
+						> Component
+
+=======================================================================================
+
+ethical_hacking_notes
+
+Starting plan:
+	1. Understand the Basics of Networking and Security
+
+	Networking Concepts: Learn about TCP/IP, subnets, firewalls, and protocols (HTTP, FTP, DNS, etc.).
+	Security Fundamentals: Familiarize yourself with concepts such as encryption, authentication, and common vulnerabilities (like OWASP Top Ten).
+	
+	2. Learn About Operating Systems
+	
+	Linux: Get comfortable with Linux, as many hacking tools and servers run on it. Start with a distribution like Ubuntu or Kali Linux.
+	Windows: Understand Windows internals, as many targets are Windows-based.
+	
+	3. Programming and Scripting Skills
+	
+	Python: It's widely used in hacking for scripting and automation. Learn how to write scripts to automate tasks.
+	JavaScript: Useful for web application hacking and understanding client-side vulnerabilities.
+	
+	4. Familiarize Yourself with Hacking Tools
+	
+	Kali Linux: A distribution specifically designed for penetration testing with pre-installed tools (like Metasploit, Nmap, Burp Suite).
+	Wireshark: For network analysis and packet sniffing.
+	Burp Suite: For web application security testing.
+	
+	5. Hands-On Practice
+	
+	Capture The Flag (CTF) Competitions: Join platforms like Hack The Box, TryHackMe, or OverTheWire to practice your skills in a controlled environment.
+	Vulnerable Applications: Use intentionally vulnerable applications like DVWA (Damn Vulnerable Web Application) or OWASP Juice Shop to practice exploiting vulnerabilities.
+	
+	6. Learn Ethical Hacking
+	
+	Courses: Consider taking online courses or certifications like Certified Ethical Hacker (CEH) or Offensive Security Certified Professional (OSCP).
+	Books: Read books like "Hacking: The Art of Exploitation" by Jon Erickson or "The Web Application Hacker's Handbook" by Dafydd Stuttard and Marcus Pinto.
+	
+	7. Stay Updated and Join Communities
+	
+	Forums and Communities: Engage with forums like Reddit’s r/hacking, Stack Overflow, or specialized Discord servers.
+	Follow Blogs and Podcasts: Stay current by following cybersecurity blogs and podcasts.
+	
+	8. Ethical Considerations
+	
+	Always practice hacking ethically. Ensure you have permission before testing systems and adhere to the laws and regulations in your area.
+	Conclusion
+	
+	Learning hacking is a continuous journey that combines theory with practical skills. With your knowledge of C and C++, you already have a strong foundation for understanding how software works, which is a significant advantage in your hacking education. Good luck!
+
+Next action plan:
+  - continue the course of c++ ethical hacking, study linux book on work-laptop in office, and practice project on mac.
+
+============================================================================
+	
+	Cpp in blockchain development
+
+Next action:
+
+- decide a small and simple project for initializing of blockchain development
+  project 1: Basic Blockchain implementation
+  Create a simple blockchain that stores data in blocks. Each block should contain: index,timestamps,data,previous block's hash,current block's hash
+  outcome: understand how blocks are linked together using hashes
+  tools: use c++ libraries like <openssl/sha.h> for hashing    
+
+=============================================================================
+
+Today's homework:
+
+5/2/25 Wednesday
+
+- practice basic bitwise operators
+- make a codelite program and run it successfully
+- the c++ concepts are common between different disciplines which needs to be daily updated in the common c/c++ text
+
+
+Current reading/video/study materials:
+
+	game_dev : comp 4300 course on youtube
+	
+	Quant_dev :
+	
+	blockchain_dev :
+	
+	ethical_dev : 
