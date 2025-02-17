@@ -1,0 +1,231 @@
+5/2/25 Wednesday
+
+C programming
+
+Bitwise operators
+
+	- bitwise operator and shift operators
+	- operates in bits in integer values
+
+Cast operator: the type cast operator has a higher precedence than all the arithmetic operators except the unary minus and unary plus operator
+	(int)21.51+(int)26.99 -> 21+26
+
+sizeof operator:
+	evaluated at compile time and not runtime, unless a variable-length array is used in its argument
+
+Operator precedence:
+
+highest to lowest as we go to the bottom-
+
+Postfix: () [] -> . ++ -- : Left to right
+Unary: + - ! ~ ++ -- (type) * & sizeof : Right to Left 
+Multiplicative: * / % : Left to right
+Additive: + - : Left to right
+Shift: << >> : Left to right
+Relational: < <= > >= :Left to right
+Equality: == != : Left to right
+Bitwise AND: & : Left to right
+Bitwise XOR: ^ : Left to right
+Bitwise OR: | : Left to right
+Logical AND: && : Left to right
+Logical OR: || : Left to right
+Conditional: ?: : Right to Left
+Assignment: = += -= *= /= %= >>= <<= &= ^= |= : Right to Left
+Comma: , : Left to right
+
+6/2/25 Thursday
+
+C++ language:
+	
+	C++ Classes:
+		
+		class Point
+		{
+			int m_x = 0;	//private[hungarian notation]
+			int m_y = 0;	//private[hungarian notation]
+		public:
+			Point(int x, int y);
+			int getX();
+			int getY();
+		};
+
+DSA programming
+
+	Pointers:
+		- the program can directly access the code area and the stack memory
+		- program cannot acces the heap memory
+		- Heap memory is external to the program
+		- So we use pointer to access the Heap memory
+		- Major advantages of the pointers is accessing the resources which are outside of the program
+		- also pointers are used for passing parameters
+		- whenever we declare a variable, it will be inside stack
+		- we use malloc to allocate/access memory in heap
+		- to use malloc, we need to use #include <stdlib.h>
+		- syntax of malloc
+			int *p;
+			//p = (int*)malloc(<size of array>*sizeof(<datatype>));
+			p = (int*)malloc(5*sizeof(int)); //syntax in c language
+			p = new int[5]; //syntaxin c++
+		- as malloc returns void, so we are type casting malloc with (int*)
+		- (int*) as in for integer pointer
+		- We use the * in pointer only two times, once during declaration and once during dereferencing the pointer
+		- We don't use "&" when we are giving any array name to a pointer, so we can declare an array with pointer as given below:
+			int *p;
+			int A[5]={........};
+			p=A; //correct syntax
+		- when we dynamically creating/allocating any memory in heap, we must release the memory using the keyword 
+			delete [ ]p; // in c++
+			free(p);     // in c
+		- we will be using this delete/free feature when the programs are too long and extensive
+		- Every pointer takes same amount of memory
+		- Size of pointer is independent of the datatype
+		
+	Reference
+		-only available in c++, not available in any other language
+		-a nickname given to a variable
+		- suppose the below code:
+			int a=10;
+			int &r=a; //here r is referenced to a, i.e r is the nickname for a
+		-having reference in c is useful for passing parameters
+		-instead of pointers, we can use references in small programs
+		- references must be initialized with the value at the same time when it is declared
+		- reference is not the same as a pointer
+	
+C++ in game_dev
+
+	Books: SFML Game development by example,
+	Beginning C++ through game programming
+	
+	SFML - simple and fast multimedia language
+	
+	game designing is different from game programming - search on that
+	
+	
+	Game engines - learning to make one from scratch in this course
+		
+	ECS Game programming - Entities, Components, Systems.
+		Is a software design paradigm, and can be used for all software, not limited to gaming only
+	
+	Object Oriented Programming - 
+		Object Oriented programming used the concept of Objects and Inheritance to implement specific functionality
+		Object Oriented design (in games) is the process of strictly using OOP in order to design the architecture of the game engine and the entities within it.
+		
+		Entity - Anything object in the game: player, platform, tile, design
+		Component - properties attached to entities
+			Components are pure data
+		Systems - Code/logic that drives the behaviour in the game
+			movement, rendering, sound, physics 
+			
+	Engine Architecture:
+	
+		Game Engine
+			> Scene
+				> Systems
+				> EntityManager [Factory data manager] ***important***
+					> Entity
+						> Component
+	
+10/2/25 Monday
+
+Pointers
+
+Smart Pointers:
+	- they manage the memory on their won and don't require the memory to be freed manually
+	- the smart pointers in c++ are:
+		1. std::unique_ptr:
+		2. std::shared_ptr:
+		3. std::weak_ptr:
+		4. std::auto_ptr: deprecated in c++11 and removed in c++17
+		
+11/2/25 Tuesday
+
+Notes/Cpp_dev_requirements
+
+	Programming Requirements
+	
+	1. CPP - Master C++11/14/17 features
+	2. DSA
+	3. OOPS
+	4. Multithreading and Concurrency
+	5. Template Metaprogramming
+	6. Memory management - pointers, dynamic memory allocation, smart pointers
+	7. STL, vectors, maps, sets, iterators and standard libraries
+	8. Lambda expressions and funtional programming
+	9. Low latency and high performance programming
+	10. Mutex and semaphores
+	
+	Low latency and high performance programming
+	
+	1. Cache Optimization
+	2. SIMD Instructions
+	3. Lock-free programming
+	4. Paralled Programming
+
+Blockchain development roadmap: copy to the roadmap/plan file
+
+	Types of blockchain development:
+		1. Application devs - solidity, javascript, python
+		2. Core devs - golang, c++, rust
+	What will you do?
+		- smart contracts on ethereum BC using solidity
+		- understanding c++ through blockchain development
+	Tools & tech:
+		1. javascript - react, node, express, web3
+		2. Truffle[framework]
+		3. Ganache - for hosting and deploying applications [test transactions] 
+		4. Metamask
+	What more is required? [Tutorials -> projects -> work]
+		- Web development
+		- Crypto graphy
+		
+14/02/25 - Friday
+
+Linux - [from book]
+	The kernel also maintains data structures that map the virtual memory of each process into the physical memory of the computer and the swap area(s) on disk. All communication between processes is done via mechanisms provided by
+	the kernel. In response to requests from processes, the kernel creates new pro-
+	cesses and terminates existing processes. Lastly, the kernel (in particular, device
+	drivers) performs all direct communication with input and output devices, transfer-
+	ring information to and from user processes as required.
+	
+	
+	Difference between normal link and symbolic link in linux
+	
+	The stdio library
+	To perform file I/O, C programs typically employ I/O functions contained in the
+	standard C library. This set of functions, referred to as the stdio library, includes
+	fopen(), fclose(), scanf(), printf(), fgets(), fputs(), and so on. The stdio functions are
+	layered on top of the I/O system calls (open(), close(), read(), write(), and so on).
+	
+	
+	Process memory layout
+	A process is logically divided into the following parts, known as segments:
+	z Text: the instructions of the program.
+	z Data: the static variables used by the program.
+	z Heap: an area from which programs can dynamically allocate extra memory.
+	z Stack: a piece of memory that grows and shrinks as functions are called and
+	return and that is used to allocate storage for local variables and function call
+	linkage information.
+	
+	An execve() call destroys the existing text, data,
+	stack, and heap segments, replacing them with new segments based on the code of
+	the new program
+	
+	Process termination and termination status
+	A process can terminate in one of two ways: by requesting its own termination
+	using the _exit() system call (or the related exit() library function), or by being killed
+	by the delivery of a signal. 
+	
+C++ queries:
+	Difference between structure union and class
+	Virtual functions 
+	Difference between data encapsulation and abstraction 
+	
+Linux - [how to study from youtube]
+	- man pages
+	- tldr pages
+	- arch wiki
+	- gentoo linux
+	- check starred repos[linux_dev]
+
+Quant - resources
+	- Trading systems developers guide - jeff vogels
