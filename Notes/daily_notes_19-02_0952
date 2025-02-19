@@ -1,0 +1,189 @@
+OOP concepts
+    The main aim of OOPs is to bind together tha data & the functions that operate on them, 
+    so that the no other part of the code can access this data other than the function.
+    OOPs is a programming paradigm where complete software operates as bunch of objects talking to
+    each other.
+    An object is a collection of data and methods which operate on the data.
+
+    Advantages & Disadvantages:
+        Advantages:
+            Provides enhanced code reusability
+            Code is easier to maintain and update
+            Provides better data security by restricting data access and avoiding unnecessary exposure
+            Fast to implement and easy yo redesign resulting in minimizing the complexity of the overall program
+        Disadvantages:
+            Everything is treated as objects so it's tricky
+            Proper planning for file management
+            OOPs is not suitable for all kinds of problems
+            Length of the program is much larger compared to the procedural approach
+
+
+    Types:
+        1. Class
+        2. Objects
+        3. Data abstraction
+        4. Encapsulation 
+        5. Inheritance
+        6. Polymorphism 
+        7. Dynamic binding
+        8. Message passing
+
+    Class:
+        User defined data type
+        Consists of data-members and member - functions
+        These can be accessed and used by creating an instance of that object.
+        It represents the set of properties or methods that are common to all objects of one type
+        A class is like a blueprint for an object.
+        When a class is defined no memory is allocated.
+
+    Objects:
+        Basic unit of OOPs and represents real life entities
+        It is an instance of a class
+        When an object is created, memory is allocated to that object
+        An object has an identity, state & behaviour
+        Object contains data and code to manipulate the data.
+        Objects can interact without having to know the details of each other.
+        It is sufficient to know the type of the message accepted & type of the response returned by the object.
+
+    Encapsulation:
+        It is the binding of the data & methods that manipulate them into single unit such that 
+        sensitive data is hidden from the users. It is implemented as the process mentioned below:
+            Data hiding, Bundling of data & methods together
+    
+    Abstraction:
+        Similar to Encapsulation. Hiding unnecessary information and showing only relevant 
+        information to the client.
+    
+    Polymorphism:
+        It is the property of some code to behave differently for different context. Classified in:
+        Run time Polymorphism
+        Compile time Polymorphism[static Polymorphism or early binding]
+
+        Run time Polymorphism:
+            -> Dynamic Polymorphism -> late binding
+                -> method overriding
+
+        Compile Time Polymorphism:
+            -> static Polymorphism -> early binding
+                -> method overloading
+                -> operator overloading
+    
+    Inheritance:
+        A class derived from other class.
+        Main purpose is to increase code reusability.
+        Used to achieve runtime Polymorphism.
+    
+    Access Specifiers:
+        Special keywords used to specify or control the accessibilty of entities like class, objects,
+        methods[private, public, protected]
+
+C programming language
+
+
+
+
+====================================================================================================
+Notes from the pages [shift these to the respective spaces once finished]
+
+Constructors and Destructors in C++
+
+    Constructors are always called.
+    Types of Constructors:
+        Default Constructor
+        Parameterized Constructor
+        Copy Constructor - this is called when we create an object from an existing object
+        Shallow Constructor - compiler by default calls the copy constructor that auto assigns value to designated call functions
+        Deep Copy Constructor - default constructor does shallow copy
+
+DSA:
+
+    Types of sorting:
+        Selection sort:
+            sort on the array by finding the minimum elements repeatedly and 
+            swap is with the beginning element of the unsorted array.
+        Bubble sort:
+            repeatedly sorting the adjacent elements is they are not in order.
+        Insertion sort:
+        Merge sort:
+        Turbo sort:
+        Stable sort:
+        Partial sort:
+        nth element sort:
+
+Network protocol notes
+    TCP/IP -> consists of 4 layers:
+        Application layer
+        Transport layer
+        Network layer
+        Data-Link layer
+
+    PING: Packet internet Network grapher
+
+    TCP flags and it's types: [ARP - Address Resolution protocol]
+        SYN
+        ACK
+        FIN 
+        RST 
+        PSH 
+        URG 
+
+    Network layers:
+        Physical: 
+            - Deals with the physical connection between devices.
+            - Transmits raw bit streams over a physical medium (e.g., cables, radio waves).
+        Data-Link:
+            - Provides node-to-node data transfer (e.g., between two directly connected devices).
+            - Handles error detection and correction from the physical layer.
+            - Examples: Ethernet, MAC addresses.
+        Network:
+            - Manages device addressing, routing, and packet forwarding.
+            - Determines the best path for data to travel across networks.
+            - Examples: IP (Internet Protocol), routers.
+        Transport:
+            - Ensures reliable data transfer between end systems.
+            - Handles error recovery, flow control, and data segmentation.
+            - Examples: TCP (Transmission Control Protocol), UDP (User Datagram Protocol).
+        Session:
+            - Manages sessions between applications (establishing, maintaining, and terminating connections).
+            - Examples: NetBIOS, RPC (Remote Procedure Call).
+        Presentation:
+            - Translates data between the application layer and the network format.
+            - Handles encryption, compression, and data formatting.
+            - Examples: SSL/TLS, JPEG, MPEG.
+        Application:
+            - Provides network services directly to end-user applications.
+            - Examples: HTTP, FTP, SMTP, DNS.
+
+        note: Secure TCP/IP network uses encrypted protocols like SSL/TLS or IPSEC. The 7 network layers refer to the **OSI (Open Systems Interconnection) model**, which is a conceptual framework used to understand and standardize how different networking protocols interact. The layers are:
+
+Investement & Markets:
+
+    Things to check:
+    
+    Moat concept:
+        Competitive Advantage
+        To what extent has a company designed it self or is capable to design layer over layers 
+        to beat 
+
+BlockChain programming:
+
+    What is a BlockChain? [need answer]
+
+    Distributed systems:
+        They are a computing paradigm whereby two of more nodes work with each other in a coordinated fashion to achieve a common outcome.
+        It is modelled in such a way that the end user sees it as a single logical platform. Eg. Google's search page.
+
+    Nodes:
+        Defined as an individual player in a distributed system. All nodes are capable of sending and receiving messages to and from each other.
+        individual nodes can sometimes be honest, faulty, or malicious, and have their own memory and processor.
+    
+    Issues in e-cash system: accountibility and anonymity.
+    Both of these issues was solved by Chaum by introducing the concepts of blind signature and secret sharing.
+
+    Peer-to-peer:
+        This means there is no single central controller in the network, and all participants can talk to each other directly.
+        This allows for transactions to be exchanged between peers, without the involvement of a third-party.
+
+    Distributed Ledger:
+        This means that a distributed ledger is spread across the network among all the peers.
+        and each peer holds a copy of the complete ledger.
