@@ -1,0 +1,20 @@
+**1. Understand the Basics of C++:**
+   - Ensure you're familiar with fundamental C++ concepts such as variables, data types, control structures, functions, and object-oriented programming.
+
+**2. Introduction to Game Development with C++:**
+   - Watch the following tutorial to get a practical introduction to creating a game in C++:
+
+     [Make a C++ game FULL COURSE!](https://www.youtube.com/watch?v=XOs2qynEmNE&utm_source=chatgpt.com)
+
+
+**3. Explore Game Development Frameworks:**
+   - Familiarize yourself with Simple and Fast Multimedia Library (SFML), a popular C++ library for game development.
+   - Read the article "C++ for Beginners: Build a 2D Arcade Game From Scratch" to understand how to use SFML for creating a basic game. ([The JetBrains Blog](https://blog.jetbrains.com/education/2023/03/16/c-for-beginners-build-a-2d-arcade-game-from-scratch/?utm_source=chatgpt.com))
+
+**4. Hands-On Practice:**
+   - Follow along with the tutorials to build a simple 2D game.
+   - Experiment with modifying the game to reinforce your understanding and creativity.
+
+**5. Additional Resources:**
+   - For a more comprehensive study, consider the "Learn C++ Game Development" course on Udemy, which teaches how to use the SFML library for creating 2D games.
+

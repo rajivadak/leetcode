@@ -1,0 +1,9 @@
+Basic input/output
+
+Using \n is better than std::endl
+  coz, a \n is a simple escape sequence that adds a newline charachter which is low-level operation
+  Whereas, the std::endl adds a newline charachter as well as it flushes the output buffer
+  Flushing buffer is considered a more costly operation in terms of performance when we are printing a large amount of data
+
+using namespace std
+  we are telling the compiler that we are using all the names in the std namespace withoout explicitly mentioning std::

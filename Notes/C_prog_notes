@@ -1,0 +1,24 @@
+C Language
+
+Data types - 
+	Primitive datatypes are the types that are not objects and stores all sorts of data.
+	Keywords to modify the basic integer datatype: short, long, and unsigned
+
+Enums - 
+	A datatype that allows a programmer to define a variable and specify the valid value that could be stored into that variable
+	eg. enum primaryColour {red, yellow, blue};
+	enum primaryColour myColor, gregsColor;
+	The compiler treats enumeration identifiers as integer constants
+
+Format Specifiers - 
+	they specify the type of data of the variable to be displayed
+
+Command line arguments -
+	When main() is called by the runtime system, two arguments are actually passed to the function:
+	-the first argument(argc for argument count) is an integer value that specifies the number of arguments passed to the function
+	-the second argument(argv for argument vector) is an array of character pointers(strings)
+
+int main(int argc, char *argv[])
+{
+...
+}
