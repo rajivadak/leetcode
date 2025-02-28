@@ -1,0 +1,165 @@
+Coding problems:
+	Arithemtic:
+		Sum and Difference – Given two integers, find their sum and difference.
+		Product and Quotient – Given two integers, compute their product and quotient (integer division).
+		Modulo Operations – Compute the remainder when one number is divided by another.
+		Power Calculation – Given two numbers, compute using pow() or a loop.
+		LCM and GCD – Given two numbers, find their Least Common Multiple (LCM) and Greatest Common Divisor (GCD).
+		Sum of Digits – Given an integer, find the sum of its digits.
+		Reversing a Number – Reverse the digits of a given number without using strings.
+		Factorial Calculation – Compute the factorial of a given number using recursion or loops.
+		Check for Prime – Determine if a given number is prime or not.
+		Average of Two Numbers – Find the average of two integers (handle floating-point precision).
+		Nth Fibonacci Number – Compute the Nth Fibonacci number using recursion or an optimized approach.
+		Number of Divisors – Count the number of divisors of a given integer.
+		Sum of First N Natural Numbers – Compute the sum of the first N natural numbers using formulas.
+		Perfect Number Check – Check if a number is a perfect number (sum of its divisors equals the number).
+	15	Armstrong Number – Check if a number is an Armstrong number (sum of cubes of its digits equals the number).
+	
+	Conditional loops:
+		Even or Odd – Given an integer, check if it is even or odd.
+		Maximum of Three Numbers – Find the largest of three numbers using if-else.
+		Grade Calculation – Given a student's marks, assign a grade (A/B/C/D/F).
+		Leap Year Checker – Check if a given year is a leap year or not.
+		Calculator Program – Implement a simple calculator using a switch-case statement.
+		Sum of N Natural Numbers – Compute the sum of the first N natural numbers.
+		Reverse a Number – Reverse the digits of a given number.
+		Factorial Calculation – Compute the factorial of a number using a loop.
+		Multiplication Table – Print the multiplication table of a given number.
+		Number of Digits in an Integer – Count the number of digits in a given integer.
+		Check for Prime Number – Determine if a number is prime or not.
+		Armstrong Number – Check if a number is an Armstrong number (sum of cubes of digits = number).
+		Fibonacci Series – Print the first N Fibonacci numbers using a loop.
+		Sum of Digits – Compute the sum of all digits of a given number.
+	30	Perfect Number Check – Check if a number is a perfect number (sum of divisors = number).
+		
+		
+	Bitwise:
+		Bitwise AND, OR, XOR – Given two integers, compute their AND, OR, and XOR values.
+		Check if a Number is Even or Odd using Bitwise – Use the bitwise AND (&) operator to check if a number is even or odd.
+		Swap Two Numbers Without Using a Third Variable – Swap two numbers using the XOR operator.
+		Multiply a Number by 2 Without Using * Operator – Multiply a number by 2 using the left shift (<<) operator.
+		Divide a Number by 2 Without Using / Operator – Divide a number by 2 using the right shift (>>) operator.
+		Check if a Number is a Power of Two – Use bitwise operations to check if a number is a power of 2.
+		Count the Number of Set Bits (Hamming Weight) – Count the number of 1s in a binary representation of a number.
+		Find the Only Non-Repeating Element in an Array – Given an array where every number appears twice except one, find the unique element using XOR.
+		Turn Off the Rightmost Set Bit – Given a number, turn off its rightmost 1-bit (change it to 0).
+		Check if Two Numbers Differ by Only One Bit – Given two numbers, check if they differ by exactly one bit.
+		Find XOR of All Numbers from 1 to N – Compute XOR of all numbers from 1 to N efficiently.
+		Find the Position of the Rightmost Set Bit – Find the position (1-based) of the rightmost 1-bit in a number.
+		Toggle a Specific Bit of a Number – Toggle the K-th bit of a number (flip from 0 to 1 or 1 to 0).
+		Find Two Non-Repeating Elements in an Array – Given an array where every element appears twice except two, find those two unique numbers using XOR.
+	45	Binary Representation of a Number – Print the binary representation of a given number without using built-in functions.
+		
+	Arrays:
+		Find the Maximum and Minimum Element in an Array – Given an array, find the largest and smallest elements.
+		Reverse an Array – Reverse the elements of an array without using extra space.
+		Sum of All Elements in an Array – Compute the sum of all elements in an array.
+		Find the Second Largest Element in an Array – Find the second-largest number in an array.
+		Count Occurrences of an Element in an Array – Given an array and a number, count its occurrences.
+		Check if an Array is Sorted – Determine whether an array is sorted in non-decreasing order.
+		Left Rotate an Array by One Position – Shift all elements left by one position.
+		Right Rotate an Array by K Positions – Rotate an array to the right by K positions.
+		Move All Zeros to the End – Given an array, move all zeroes to the end while maintaining order.
+		Find the Union and Intersection of Two Arrays – Compute the union and intersection of two arrays.
+		Find the Missing Number in an Array – Given an array of size N-1 with numbers from 1 to N, find the missing number.
+		Find the First Repeating Element – Find the first element that appears more than once.
+		Find the Subarray with Given Sum – Given an array and a target sum, find a subarray with that sum.
+		Kadane’s Algorithm (Maximum Subarray Sum) – Find the maximum sum of a contiguous subarray.
+	60	Find the Leader Elements in an Array – An element is a leader if it is greater than all elements to its right.
+		
+	strings:
+		Reverse a String – Reverse a given string without using built-in functions.
+		Check if a String is Palindrome – Determine if a given string reads the same forward and backward.
+		Convert a String to Uppercase and Lowercase – Implement functions to convert a string to uppercase and lowercase.
+		Count Vowels and Consonants in a String – Given a string, count the number of vowels and consonants.
+		Find the Length of a String Without Using strlen() – Implement a function to compute the length of a string.
+		Check if Two Strings are Anagrams – Determine if two strings contain the same characters in a different order.
+		Find the First Non-Repeating Character – Identify the first unique character in a string.
+		Remove All Spaces from a String – Remove all whitespace characters from a given string.
+		Count the Number of Words in a String – Given a sentence, count the total number of words.
+		Check if a String Contains Only Digits – Verify if a given string consists of only numeric characters.
+		Find the Longest Common Prefix Among Strings – Given an array of strings, find the longest common prefix.
+		Find All Substrings of a String – Generate and print all possible substrings of a given string.
+		Implement strstr() Function – Write a function to find the first occurrence of one string within another.
+		Find the Most Frequent Character in a String – Determine the character that appears most frequently.
+	75	Check if a String is a Rotation of Another – Determine if one string is a rotated version of another (e.g., "abcde" and "cdeab").
+
+	vectors:
+		Insert and Print Elements in a Vector – Read N integers and store them in a vector. Print all elements.
+		Reverse a Vector – Given a vector, reverse its elements.
+		Find Maximum and Minimum in a Vector – Find the largest and smallest elements in a vector.
+		Sort a Vector – Sort the elements of a vector in ascending and descending order.
+		Remove Duplicates from a Vector – Remove all duplicate elements and print the unique elements.
+		Find the Frequency of Each Element in a Vector – Count occurrences of each unique element.
+		Rotate a Vector to the Left by K Positions – Perform a left rotation on a vector by K positions.
+		Find the Sum of All Elements in a Vector – Compute the sum of all elements.
+		Find the Second Largest Element in a Vector – Find the second-largest number in a vector.
+		Find the Intersection of Two Vectors – Given two vectors, find the common elements between them.
+		Check if a Vector is Sorted – Determine whether a vector is sorted in non-decreasing order.
+		Find the First Repeating Element in a Vector – Identify the first element that appears more than once.
+		Implement Binary Search on a Sorted Vector – Search for an element in a sorted vector using binary search.
+		Merge Two Sorted Vectors – Merge two sorted vectors into one sorted vector.
+	90	Find the Longest Consecutive Sequence in a Vector – Given an unsorted vector, find the longest sequence of consecutive numbers.
+
+	oops:
+		Create a Class and Object – Define a Student class with attributes name, age, and marks, and create an object to display its values.
+		Constructor and Destructor – Implement a Car class with a constructor to initialize brand and model and a destructor to print a message when the object is destroyed.
+		Encapsulation – Implement a BankAccount class with private attributes for account balance and public methods for deposit and withdrawal.
+		Getter and Setter Methods – Create a Rectangle class with private attributes length and width, and provide getter and setter methods.
+		Static Members – Implement a Counter class where every object shares a static variable that keeps track of the number of objects created.
+		Operator Overloading – Overload the + operator for a ComplexNumber class to add two complex numbers.
+		Function Overloading – Implement function overloading in a MathOperations class to calculate the sum of two or three numbers.
+		Inheritance (Single Inheritance) – Create a Person base class and a Student derived class with an extra attribute rollNumber.
+		Multiple Inheritance – Implement a HybridCar class inheriting from ElectricCar and PetrolCar.
+		Hierarchical Inheritance – Create a base class Animal and derive Dog and Cat classes from it.
+		Abstract Class and Pure Virtual Function – Implement an abstract class Shape with a pure virtual function area(), then derive Circle and Rectangle classes.
+		Function Overriding (Polymorphism) – Implement function overriding in a base class Employee and a derived class Manager to display different salary calculations.
+		Friend Function – Use a friend function to allow access to private members of two different classes.
+		File Handling in OOP – Create a FileHandler class with methods to write and read data from a file.
+	105	Template Class – Implement a generic class Box<T> that can store any data type using templates.
+
+	dynamic memory allocation:
+		Allocate and Deallocate an Integer Dynamically – Use malloc/calloc/free in C and new/delete in C++ to create and delete an integer.
+		Dynamic Array Allocation – Allocate memory for an array of N integers and take input dynamically.
+		Resize an Array Using realloc() – Create a dynamic array and resize it using realloc().
+		Create a 2D Array Dynamically – Allocate memory for a 2D array dynamically using pointers.
+		Freeing Allocated Memory Properly – Implement a program that allocates memory and ensures it is properly freed.
+		Reverse an Array Using Dynamic Memory – Store an array dynamically and reverse its elements.
+		Concatenate Two Strings Using Dynamic Memory – Allocate memory for two strings and concatenate them dynamically.
+		Find the Sum of N Numbers Using Dynamic Memory – Allocate memory for an array of N elements and compute the sum.
+		Copy a String Using Dynamic Memory Allocation – Allocate memory and copy one string to another dynamically.
+		Store and Process Student Records – Use structures and dynamic memory to store student data (name, age, marks).
+		Implement a Stack Using Dynamic Memory – Create a stack using a dynamically allocated array.
+		Implement a Linked List Dynamically – Create a singly linked list using dynamic memory allocation.
+		Dynamic Memory Allocation for a Jagged Array – Allocate a jagged array dynamically where each row has a different number of columns.
+		Create a Dynamic Matrix and Perform Addition – Allocate two matrices dynamically and compute their sum.
+	120	Implement a Binary Tree Using Dynamic Memory – Create a binary tree using dynamically allocated nodes.
+	
+		recursion:
+		Factorial of a Number – Compute the factorial of a given number n.
+		Fibonacci Series – Print the first N Fibonacci numbers using recursion.
+		Sum of First N Natural Numbers – Find the sum of numbers from 1 to N recursively.
+		Reverse a String – Reverse a given string using recursion.
+		Power Calculation – Compute using recursion (exponential function)
+		Check if a String is Palindrome – Determine if a given string is a palindrome using recursion.
+		Greatest Common Divisor (GCD) – Find the GCD of two numbers using Euclidean recursion.
+		Count the Number of Digits in an Integer – Count the total digits in a number using recursion.
+		Print an Array in Reverse Order – Print all elements of an array in reverse order using recursion.
+		Find the Maximum Element in an Array – Find the maximum element in an array recursively.
+		Tower of Hanoi – Solve the Tower of Hanoi problem for N disks.
+		Binary Search Using Recursion – Implement recursive binary search in a sorted array.
+		Generate All Subsets of a String (Power Set) – Generate all subsets (power set) of a given string.
+		Josephus Problem – Solve the Josephus problem using recursion.
+	135	Sudoku Solver – Implement a recursive backtracking approach to solve a Sudoku puzzle.
+	
+Done : 1 70 38 52 108 28 14 106 76 29 39 19 4 126 9
+
+Difficult : 133 71 118 90 117
+	
+20 22 3 132 134 31 5 25 59 69 55 119 65 8 46 13 43 84 94 127 12 107 
+131 26 97 101 35 47 11 72 68 103 98 81 10 87 93 73 66 54  49 44 
+110 51 23 83 130 114 77 111 15 42 80 24 91 82 135 86 16 120 92 
+75 41 45 113 27 17 99 89 58 74 129 6 95 123 100 104 109 67 102 
+32 112 85 36 62 48 37 122 33 64 2 34 50 125 79 57 105 121 63 40 
+53 56 78 128 124 61 18 96 88 115 7 21 60 116 30 
