@@ -7,3 +7,489 @@ Basic input/output
 
   using namespace std
     we are telling the compiler that we are using all the names in the std namespace withoout explicitly mentioning std::
+
+	Global variable: 
+		It can be accessed any where in the code. However, a local variable has a higher precedence than a global variable.
+	
+	Primitive Data types:
+		Using listed initialization is better than normal initialization, as during compile time itself the error will be shown incase of an overflow incident.
+		
+		long people_on_earth {7'600'000'000}  //this will give compile error of overflow
+		long people_on_earth = 7'600'000'000  //this will not show error during compile, however, this will give wrong output due to overflow
+
+	C++ Classes:
+		
+		class Point
+		{
+			int m_x = 0;	//private[hungarian notation]
+			int m_y = 0;	//private[hungarian notation]
+		public:
+			Point(int x, int y);
+			int getX();
+			int getY();
+		};
+    
+    Smart Pointers:
+	    - they manage the memory on their won and don't require the memory to be freed manually
+	    - the smart pointers in c++ are:
+		    1. std::unique_ptr:
+		    2. std::shared_ptr:
+		    3. std::weak_ptr:
+		    4. std::auto_ptr: deprecated in c++11 and removed in c++17
+
+	Pointers:
+		- the program can directly access the code area and the stack memory
+		- program cannot acces the heap memory
+		- Heap memory is external to the program
+		- So we use pointer to access the Heap memory
+		- Major advantages of the pointers is accessing the resources which are outside of the program
+		- also pointers are used for passing parameters
+		- whenever we declare a variable, it will be inside stack
+		- we use malloc to allocate/access memory in heap
+		- to use malloc, we need to use #include <stdlib.h>
+		- syntax of malloc
+			int *p;
+			//p = (int*)malloc(<size of array>*sizeof(<datatype>));
+			p = (int*)malloc(5*sizeof(int)); //syntax in c language
+			p = new int[5]; //syntaxin c++
+		- as malloc returns void, so we are type casting malloc with (int*)
+		- (int*) as in for integer pointer
+		- We use the * in pointer only two times, once during declaration and once during dereferencing the pointer
+		- We don't use "&" when we are giving any array name to a pointer, so we can declare an array with pointer as given below:
+			int *p;
+			int A[5]={........};
+			p=A; //correct syntax
+		- when we dynamically creating/allocating any memory in heap, we must release the memory using the keyword 
+			delete [ ]p; // in c++
+			free(p);     // in c
+		- we will be using this delete/free feature when the programs are too long and extensive
+		- Every pointer takes same amount of memory
+		- Size of pointer is independent of the datatype
+		
+	Reference
+		-only available in c++, not available in any other language
+		-a nickname given to a variable
+		- suppose the below code:
+			int a=10;
+			int &r=a; //here r is referenced to a, i.e r is the nickname for a
+		-having reference in c is useful for passing parameters
+		-instead of pointers, we can use references in small programs
+		- references must be initialized with the value at the same time when it is declared
+		- reference is not the same as a pointer
+
+    CPP concurrency:
+	
+        Creating a thread:
+            
+        [c++ 11/14/17]:
+            #include <thread>
+            void work(){
+                //do some work
+            }
+            int main(){
+                std::thread t(work); //thread starts executing the process at once
+                t.join(); //detach
+            }
+            
+        [c++ 20]:
+            #include <thread>
+            void work(){
+                //do some work
+            }
+            int main(){
+                std::jthread t(work); //thread starts executing the process at once
+            }
+            
+        Note: difference between thread and jthread is the jthread object will join in its destructor. We don't need to explicitly use join.
+            
+        There are 2 ways of managing a thread in cpp, one way is to use the keyword "join", second way to use "detach"
+        If we want a not blocking behaviour, we need to detach the thread
+        
+        Creating a thread and passing arguments:
+        
+            c++11/14/17:
+                std::thread t(work, arg1, arg2);
+            
+            c++20:
+                std::jthread jt(work, arg1, arg2);
+
+	Pointer to a structure:
+		- This is a static object
+		- Code:
+			struct Rectangle
+			{
+				int length;
+				int breadth;
+			};
+			int main()
+			{
+				struct Rectangle r={10,5};  // C language code, where the keyword struct is mandatory
+				Rectangle r={10,5};			// CPP language
+				struct Rectangle *p = &r; //pointer to a structure
+				r.length = 15;  //modifying parameter
+				(*p).length=20  //Method 1
+								//This is modifying the parameter using a pointer
+								//we put (*p) as the "." operator has a higher precedence over "*" operator, and without the "()", the expression will evaluate to =>*(p.length), which is wrong.
+				p->length=20    //Method 2
+								//we use the -> operator to point the pointer to the parameter p
+				cout<<p->length<<endl;
+				cout<<p->breadth<<endl;
+				
+				return 0;
+			}
+		
+		Creating object dynamically in the heap using pointer:
+		- This is a dynamic object
+		- Code:
+			struct Rectangle
+			{
+				int length;
+				int breadth;
+			};
+			int main()
+			{
+				struct Rectangle *p;
+				Rectangle *p;		//in CPP, it is valid to remove the keyword struct when declaring a struct in int main(){}
+									// However, in C language, the struct keyword is mandatory
+				p=(struct Rectangle *)malloc(sizeof(struct Rectangle)); //in C language
+				p=new Rectangle;    //CPP language
+				
+				/*
+				when in C, we need to typecast malloc to 
+				the structure Rectangle pointer type, 
+				as malloc returns a void pointer
+				*/
+				
+				p->length=15;
+				p->breadth=7;
+				cout<<p->length<<endl;
+				cout<<p->breadth<<endl;
+				
+				return 0;
+			}
+			
+	Functions:
+		- In C language, only "pass by value" and "pass by address" is present
+		- However, in CPP, along with the above 2, there is "pass by Reference" also, so total 3
+		
+	Parameter passing methods:
+		Call by value:
+			When you don't have to modify actual parameters, we use pass by value
+			We use this when we want a function to process a value and return the result, without actually modifying the actual parameters.
+		Call by address:
+			In pass by address, the formal parameter should be of the type pointers.
+			And the parameters passed to the function from main fucntion should of the type address.
+			It uses pointers
+			One function cannot access the variables of other functions, but it can do so using pointers
+		Call by reference:
+			Need to pass references of actual parameters to the external function. eg[a->&x,b->&y]
+			When reference parameters are manipulated, the actual parameters are also modified
+			reference is nothing but a nickname for the variable it is referencing
+			
+	Array as parameter:
+		Array is passed as an address, they cannot be passed by value.
+		The other parameter passed to the function represents the size of the array, which is passed by value.
+		In this case, modifying the values in call function will modify the values in main function parameter, as it is called by address.
+		Code:
+			// void fun(int B[], int n) //method 1
+			void fun(int *B, int n)     //method 2, 
+			/*
+			instead of using array like B[], 
+			we can use *B. As this *B can point 
+			to an integer as well as to an array.
+			So using B[] also means a pointer to 
+			an array
+			*/
+			{
+				int i;
+				for(int i=n-1; i>=0; i--)
+				{
+					printf("%d ", B[i]);
+				}
+			}
+			
+			int main()
+			{
+				int A[] = {2,4,6,8,10};
+				fun(A,5); // here address of A is passed to the above function fun
+				
+				return 0;
+			}
+			
+	Returning Array as a parameter:
+		code:
+			#include <iostream>
+
+			int * fun(int n) 	//this is passing by value, the size of array
+								//[] represents returning an array
+								//You can use * instead of []
+			{
+				int *p;
+				p = (int*)malloc(n*sizeof(int));
+				return p;		//returning pointer to the newly created array in the heap
+			}
+			
+			int main()
+			{
+				int *A;
+				A = fun(5);		//passing by value
+								//the size of the array required
+				return 0;
+			}
+			
+	Structure as a parameter:
+		Passing struct as a call by value:
+			When we pass struct object as a parameter to some other function, a separate object is created by that function. It does not use the pre-existing object from main function. So only the formal parameters change, not the actual parameters.
+		Passing struct as a call by reference:
+			Compared to the above explaiantion, in this case separate object is not created, and the actual parameters are modified.
+		Passing struct as a call by address:
+			when we want a function to change the actual parameters, we use call by address or call by reference.
+		Code:
+			struct Rectangle
+			{
+				int length;
+				int breadth;
+			};
+			
+			int area_value(struct Rectangle r1)   //call by value, does not change the actual parameters
+			{
+				return r1.length*r1.breadth;
+			}
+			
+			int area_reference(struct Rectangle &r1)  //call by address, changes the actual parameters
+			{
+				return r1.length*r1.breadth;
+			}
+			
+			void change_length(struct Rectangle *r1, int l)  //call by address, changes the actual parameters
+			{
+				r1->length=l;                   //We use pointer to a structure, as change_length has *r1 passed from address in main function
+				
+			}
+			
+			int main()
+			{
+				struct Rectangle r = {10,5};
+				
+				change_length(&r, 20);    //passing struct as an address
+				
+				printf("area_value is %d \n", area_value(r));
+				printf("area_reference is %d \n", area_reference(r));
+				//printf("area_address is %d \n", area_address(r));
+			
+				return 0;
+			}
+		
+		[imp] We know that we cannot pass an array to function as value, we can only pass an array as n address. 
+		However, suppose, if a structure has an array in it, we can pass that struct to a function as a value. 
+		So, individually an array can't be passed by value, but a struct containing an array can be passed by value.
+		
+		Code 2:
+			struct Rectangle
+			{
+				int length;
+				int breadth;
+			};
+			
+			//call by value
+			void fun(struct Rectangle r1)
+			{
+				r1.length=20;
+				r1.breadth=10;
+				cout<<"value_length "<<r1.length<<endl<<"value_breadth "<<r1.breadth<<endl;
+			}
+			
+			//call by address
+			void fun_address(struct Rectangle *r2)
+			{
+				r2->length=30;
+				r2->breadth=40;
+				cout<<"add_length "<<r2->length<<endl<<"add_breadth "<<r2->breadth<<endl;
+			}
+			
+			
+			int main()
+			{
+				struct Rectangle r = {10,5};
+				printf("p_length %d\np_breadth %d\n", r.length, r.breadth);
+				fun_address(&r);
+				fun(r);
+				return 0;
+			}
+			// Output:
+			// p_length 10
+			// p_breadth 5
+			// add_length 30
+			// add_breadth 40
+			// value_length 20
+			// value_breadth 10
+		
+		Returning address of a structure:
+			code 3:
+			struct Rectangle
+			{
+				int length;
+				int breadth;
+			};
+			
+			struct Rectangle *fun()  //this struct pointer will be created in heap
+			{
+				struct Rectangle *p;
+				p=new Rectangle;
+				//p=(struct Rectangle *)malloc(sizeof(struct Rectangle)); //c-lang
+				p->length=15;
+				p->breadth=7;
+				return p;
+			};
+			
+			int main()
+			{
+				struct Rectangle *ptr=fun();;
+				cout<<"lenght "<<ptr->length<<endl<<"breadth "<<ptr->breadth<<endl;
+				return 0;
+			}
+	
+	Class and constructor:
+		Every cpp class should have a constructor.
+		for initial times, there are two constructors, default and parameterized constructor. 
+		In parameterized constructor we initialize the paramters which we will be passing.
+		Converting c to c++ code:
+			Like how we create ine structure with data-members in C, and make different functions and initializations around it, in c++ we create classes with these data-members, functions & initializations.
+			When we want to initialize the private data-members in the class, we can't do that by using any other function-member in that class.
+			So we use a constructor, whoes name is same as that of class name, and which initializes the private-data-members. 
+			So this also creates the object of that class.
+			
+	Template Classes:
+		code:
+			
+			template<class T>		//template starts here and ends at the next curly bracket
+			class Arithametic
+			{
+				private:
+					int a;
+					int b;
+				public:
+					Arithametic(int a, int b);
+					int add();
+					int sub();
+			}
+			
+			template<class T>  //as we are using class name as a scope resolution and passing it to template, we need to pass the template name through the class name as a part of scope resolution
+			Arithametic<T>::Arithametic(T a,T b)
+			{
+				this->a=a;	//this is a pointer to the current object
+				this->b=b;
+			}
+			
+			template<class T>
+			int Arithametic<T>::add()
+			{
+				T c;
+				c = a+b;
+				return a+b;
+			}
+			
+			template<class T>
+			int Arithametic<T>::sub()
+			{
+				T c;
+				c=a-b;
+				return a-b;
+			}
+			
+			int main()
+			{
+				Arithametic<int> ar(10,5);  //here once we have declared the Arithametic type as int, it replaces all the places where we have typed "T"
+				cout<<ar.add();
+				
+				Arithametic<float> ar1(1.5,1.2);
+				cout<<ar1.add(); 
+			}
+					
+	Linked_lists:
+		Arrays have difficulty in updating, adding or deleting items in the list, the use of linked lists comes in place.
+		Linked lists are inferior to array, as they are bad at searching, while in array we just need to find the address of the starting element.
+		
+		Singly linked lists:
+			Let's consider each memory space where data is stored as a "NODE".
+			So in arrays, each NODE has two components, one is the node data and 2nd is the node index. In arrays, all the nodes are in a contiguos manner.
+			However, in linked lists, each node has a data and address of the next node. In this way, the nodes in a linked lists need not be in a contiguous manner.
+			So whenever we need to update, add, delete any data in a linked list, we need not re-arrange all the data, we just need to update the address stored in the subsequent nodes.
+			While in array, we need to move all the subsequent nodes while doing the same.
+		
+		Continue the video:https://www.youtube.com/watch?v=N6dOwBde7-M
+		from 4:10
+
+	Threads:
+		Code 1:
+			#include <iostream>
+			#include <thread>
+			
+			static bool s_finished = false;
+			
+			void DoWork()
+			{
+				while(!s_finished)
+				{
+					std::cout << "working..... \n";
+				}
+			} 
+			
+			int main()
+			{
+				
+				std::thread worker(DoWork);     //1. Thread is opened, and work starts executing in the DoWork function
+				
+				std::cin.get();					//2. While the above thread continuosly prints, this other thread wait for an input "enter" from the user
+				s_finished = true;				//3. Once the user presses enter, the falg becomes true, and this make the above print statement stop
+				
+				worker.join();					//4. The above execution wait until point 1, until the user first presses enter,
+												// after that it executes point 2 & 3, and then after that it come to point 4, and not the thread stops.
+				
+				std::cin.get();					//5. Once the user presses enter again, the program terminates
+			}
+			
+	Arrays and vectors:
+		initialization of an array:
+			data_type array_name [number of elements] {initialization list};
+			eg:
+			int test_scores [5]{100,99,98,97,95};
+			
+	Vectors:
+		Arrays never  do bound checking.
+		Many vector methods provide bound checkings
+	
+		Declaring a vector:
+			#include <vector>
+			using namespace std;
+			
+			vector <char> vowels {'a','e','i','o','u'};
+			vector <int> test_scores{100,98,99,97,95};
+			vector <double> hi_temp (365, 80.0) // 365 is the size of vector and 80.0 is the initializer value for all elements in that array
+		
+		Accessing vector elements:
+			vector_name.at(element_index)
+			eg. test_scores.at(1)
+			[imp]the keyword "at" help to access. 
+			also with the "at" access, it will provide bounds check
+			With only [] access, there will not be any bounds check.
+			
+		Adding an element to vector:
+			vector_name.push_back(element);
+			test_scores.push_back(80);
+			
+		2D vector:
+			vector <vecctor<int>> movie_ratings
+			{
+				// 2D initialization list
+			}
+			
+		Vector access specifiers:
+			.at(<index>); //gives the vector element at the given index 
+			.push_back(<element>);  //appends the element to the end the given vector.
+			.size(); //gives the size of the vector
+	
+	Explicit typecasting
+		average = static_cast<double>(total_amount)/(total_number)
+			//Here the variable average is of type double, so we are explicitly coercing the operation on two integers into the type double
+
