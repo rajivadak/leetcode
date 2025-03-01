@@ -22,3 +22,96 @@ C Language
     {
     ...
     }
+
+    Bitwise operators
+
+        - bitwise operator and shift operators
+        - operates in bits in integer values
+
+    Cast operator: the type cast operator has a higher precedence than all the arithmetic operators except the unary minus and unary plus operator
+        (int)21.51+(int)26.99 -> 21+26
+
+    sizeof operator:
+        evaluated at compile time and not runtime, unless a variable-length array is used in its argument
+
+    Operator precedence: highest to lowest as we go to the bottom-
+
+        Postfix: () [] -> . ++ -- : Left to right
+        Unary: + - ! ~ ++ -- (type) * & sizeof : Right to Left 
+        Multiplicative: * / % : Left to right
+        Additive: + - : Left to right
+        Shift: << >> : Left to right
+        Relational: < <= > >= :Left to right
+        Equality: == != : Left to right
+        Bitwise AND: & : Left to right
+        Bitwise XOR: ^ : Left to right
+        Bitwise OR: | : Left to right
+        Logical AND: && : Left to right
+        Logical OR: || : Left to right
+        Conditional: ?: : Right to Left
+        Assignment: = += -= *= /= %= >>= <<= &= ^= |= : Right to Left
+        Comma: , : Left to right
+
+    2D arrays:
+		int numbers[3][4] = 
+			{
+				{..........}, //first row
+				{..........}, //second row
+				{..........}  //third row
+			};
+		
+		It is not required to initialize all elements in a 2D array
+		Rest of the elements are initialized to 0.
+		
+		Designated initializers:
+			int numbers[3][4] ={[0][0]=1, [1][1]=5, [2][2]=9}; //rest elements are initialized to 0
+	
+	Variable length arrays:
+		The term variable length array does not mean that you can modify the length of the array after you create it
+		A VLA keeps same size after creation
+		A VLA allows you to specify the size of an array with a variable when creating an array.
+		You cannot initialize a VLA in its declaration.
+			float a8[n];
+			float a9[m];
+	
+	Functions:
+		A function is a self-contained unit of program code designed to accomplish a particular task.
+		[imp] When passing an array as an argument to a function, you must also pass an additional argument specifying the size of the array. 
+		The function has no means of knowng how many elements are there in the array.
+		When invokinga function, the arguments you specify when you call a function should agree in type, number, and sequence with which the paramters are passed in the function header.		
+		
+	Strings:
+		Single char is assigned between '<>'
+		String constant or string literal is a sequence of characters or symbols b/w pair of double-quote characters "<>"
+		A string is always terminated by a null char, so the length of string is always one greater than the number of charachters in the string.
+		We cannot assign strings directly to charachter arrays in c-lang, however, we can declare individual chars in the declared charachterarray with single char literals.
+			char s[100];
+			s="hello"; //doesnt work
+			
+			s[0]='h'; //this works
+
+	Character String:
+		char myString[20];  //in this we can store a string of only 19 length, last one is for the null char "\0"
+		char word[] = {'H','E','L','L','O','!'};
+		
+	Giving string as input:
+		char input[10];
+		scanf("%s",input);  //we dont need the & operator to use on string while using scanf
+		
+	Constant strings:
+		#define BEEP '\a'
+		#define TEE 'T'
+		#define ESC '\033'
+		
+		C has a way yo create symbolic constants using 'enums'
+		
+		const char message[]="<string>";
+	
+	Common string functions:
+	    Need to used <string.h> library
+		strlen - length of a string
+			returned as size_t
+		strcpy() & strncpy()- copying one char string to another
+			strcpy does not check whether the source string fits in the target string or not, so strncpy is the safer choice which checks
+		strcat() & strncat()- concatenation of 2 strings
+		strcmp() & strncmp()- comparing two strings
