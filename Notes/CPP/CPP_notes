@@ -1,21 +1,22 @@
-Basic input/output
+Notes [from lp-learning+dsa]:
 
-  Using \n is better than std::endl
-    coz, a \n is a simple escape sequence that adds a newline charachter which is low-level operation
-    Whereas, the std::endl adds a newline charachter as well as it flushes the output buffer
-    Flushing buffer is considered a more costly operation in terms of performance when we are printing a large amount of data
+	Basic input/output:
+		Using \n is better than std::endl
+    	coz, a \n is a simple escape sequence that adds a newline charachter which is low-level operation
+    	Whereas, the std::endl adds a newline charachter as well as it flushes the output buffer
+    	Flushing buffer is considered a more costly operation in terms of performance when we are printing a large amount of data
 
-  using namespace std
-    we are telling the compiler that we are using all the names in the std namespace withoout explicitly mentioning std::
+	using namespace std
+		we are telling the compiler that we are using all the names in the std namespace withoout explicitly mentioning std::
 
 	Global variable: 
 		It can be accessed any where in the code. However, a local variable has a higher precedence than a global variable.
-	
+		
 	Primitive Data types:
 		Using listed initialization is better than normal initialization, as during compile time itself the error will be shown incase of an overflow incident.
 		
-		long people_on_earth {7'600'000'000}  //this will give compile error of overflow
-		long people_on_earth = 7'600'000'000  //this will not show error during compile, however, this will give wrong output due to overflow
+			long people_on_earth {7'600'000'000}  //this will give compile error of overflow
+			long people_on_earth = 7'600'000'000  //this will not show error during compile, however, this will give wrong output due to overflow
 
 	C++ Classes:
 		
@@ -30,7 +31,7 @@ Basic input/output
 		};
     
     Smart Pointers:
-	    - they manage the memory on their won and don't require the memory to be freed manually
+	    - they manage the memory on their won and dont require the memory to be freed manually
 	    - the smart pointers in c++ are:
 		    1. std::unique_ptr:
 		    2. std::shared_ptr:
@@ -55,7 +56,7 @@ Basic input/output
 		- as malloc returns void, so we are type casting malloc with (int*)
 		- (int*) as in for integer pointer
 		- We use the * in pointer only two times, once during declaration and once during dereferencing the pointer
-		- We don't use "&" when we are giving any array name to a pointer, so we can declare an array with pointer as given below:
+		- We dont use "&" when we are giving any array name to a pointer, so we can declare an array with pointer as given below:
 			int *p;
 			int A[5]={........};
 			p=A; //correct syntax
@@ -100,7 +101,7 @@ Basic input/output
                 std::jthread t(work); //thread starts executing the process at once
             }
             
-        Note: difference between thread and jthread is the jthread object will join in its destructor. We don't need to explicitly use join.
+        Note: difference between thread and jthread is the jthread object will join in its destructor. We dont need to explicitly use join.
             
         There are 2 ways of managing a thread in cpp, one way is to use the keyword "join", second way to use "detach"
         If we want a not blocking behaviour, we need to detach the thread
@@ -174,7 +175,7 @@ Basic input/output
 		
 	Parameter passing methods:
 		Call by value:
-			When you don't have to modify actual parameters, we use pass by value
+			When you dont have to modify actual parameters, we use pass by value
 			We use this when we want a function to process a value and return the result, without actually modifying the actual parameters.
 		Call by address:
 			In pass by address, the formal parameter should be of the type pointers.
@@ -282,7 +283,7 @@ Basic input/output
 		
 		[imp] We know that we cannot pass an array to function as value, we can only pass an array as n address. 
 		However, suppose, if a structure has an array in it, we can pass that struct to a function as a value. 
-		So, individually an array can't be passed by value, but a struct containing an array can be passed by value.
+		So, individually an array cant be passed by value, but a struct containing an array can be passed by value.
 		
 		Code 2:
 			struct Rectangle
@@ -355,7 +356,7 @@ Basic input/output
 		In parameterized constructor we initialize the paramters which we will be passing.
 		Converting c to c++ code:
 			Like how we create ine structure with data-members in C, and make different functions and initializations around it, in c++ we create classes with these data-members, functions & initializations.
-			When we want to initialize the private data-members in the class, we can't do that by using any other function-member in that class.
+			When we want to initialize the private data-members in the class, we cant do that by using any other function-member in that class.
 			So we use a constructor, whoes name is same as that of class name, and which initializes the private-data-members. 
 			So this also creates the object of that class.
 			
@@ -411,7 +412,7 @@ Basic input/output
 		Linked lists are inferior to array, as they are bad at searching, while in array we just need to find the address of the starting element.
 		
 		Singly linked lists:
-			Let's consider each memory space where data is stored as a "NODE".
+			Lets consider each memory space where data is stored as a "NODE".
 			So in arrays, each NODE has two components, one is the node data and 2nd is the node index. In arrays, all the nodes are in a contiguos manner.
 			However, in linked lists, each node has a data and address of the next node. In this way, the nodes in a linked lists need not be in a contiguous manner.
 			So whenever we need to update, add, delete any data in a linked list, we need not re-arrange all the data, we just need to update the address stored in the subsequent nodes.
@@ -492,4 +493,3 @@ Basic input/output
 	Explicit typecasting
 		average = static_cast<double>(total_amount)/(total_number)
 			//Here the variable average is of type double, so we are explicitly coercing the operation on two integers into the type double
-
