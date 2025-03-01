@@ -19,6 +19,18 @@ Notes [from lp-learning+dsa]:
 			long people_on_earth = 7'600'000'000  //this will not show error during compile, however, this will give wrong output due to overflow
 
 	C++ Classes:
+		- default access specifier in a class is private
+		- code:
+			class Point
+			{
+				int m_x = 0;    //private
+				int m_y = 0;
+			public:
+				Point(int x, int y);
+				int getX();
+				int getY();
+			};
+			
 		
 		class Point
 		{
@@ -30,7 +42,7 @@ Notes [from lp-learning+dsa]:
 			int getY();
 		};
     
-    Smart Pointers:
+    	Smart Pointers:
 	    - they manage the memory on their won and dont require the memory to be freed manually
 	    - the smart pointers in c++ are:
 		    1. std::unique_ptr:
@@ -359,6 +371,30 @@ Notes [from lp-learning+dsa]:
 			When we want to initialize the private data-members in the class, we cant do that by using any other function-member in that class.
 			So we use a constructor, whoes name is same as that of class name, and which initializes the private-data-members. 
 			So this also creates the object of that class.
+		- code:
+			Point::Point( int x, int y)
+			{
+				m_x = x;
+				m_y = y;
+			}
+			
+		- member initializer lists:
+			//constructor
+			Point::Point(int x, int y)
+				: m_x(x)
+				, m_y(y)
+			/*
+			Even before we get to the below {} code, we set up the private members m_x & m_y with their respective initializations.
+			So if we want to set the const variable list with some other vlaue initialization, we need to use the member initializer lists
+			*/
+			{
+				//rest of the code comes here
+			}
+			//destructor
+			Point::~Point()
+			{
+				//clean-up here
+			}
 			
 	Template Classes:
 		code:
@@ -489,7 +525,144 @@ Notes [from lp-learning+dsa]:
 			.at(<index>); //gives the vector element at the given index 
 			.push_back(<element>);  //appends the element to the end the given vector.
 			.size(); //gives the size of the vector
+		Code 1:
+			#include <iostream>
+			#include <vector>
+			
+			int main(int argc, char * argv[])
+			{
+				std::vector<int> vec;
+				vec.push_back(42); //vec is stack data-structure so we are using  push_back
+				vec.push_back(10);
+				
+				std::cout<<vec[0]<<"\n";
+				std::cout<<vec[1]<<"\n";
+				std::cout<<vec[2]<<"\n";
+				/*
+				Now what happens in the above cout, as vec[2] is not defined, 
+				so the cout of vec[2],  goes out of bound, so in this case the 
+				compiler takes what ever value is presnt at the undefined vector 
+				index at the time of compiling.
+				*/
+				
+				return 0;
+			}
+			
+		Code 2:
+			#include <iostream>
+			#include <vector>
+			
+			int main(int argc, char * argv[])
+			{
+				std::vector<int> vec;
+				vec.push_back(42); 
+				vec.push_back(10);
+				
+				for(int i=0; i<vec.size(); i++){
+				std::cout<<vec[i]<<"\n";
+				}
+				
+				/*
+				The above for loop will give a warning, as we are comparing
+				int i [signed int type] with vec.size() [unsigned int type].
+				So iterating through a type vector, the vector size will be 
+				of the type unsigned, so it is better to use size_t for any
+				other int, to ensure that it is also of the type unsigned int.
+				The correct syntax is given below:
+				*/
+				
+				for(size_t i=0; i<vec.size(); i++){
+				std::cout<<vec[i]<<"\n";
+				}
+				
+				return 0;
+			}
+			
+		Code 3:
+			#include <iostream>
+			#include <vector>
+			
+			int main(int argc, char * argv[])
+			{
+				std::vector<float> vec;
+				vec.push_back(42.2f); 
+				vec.push_back(10.1f);
+				vec.push_back(11.3f);
+				
+				for(auto a : vec){
+					std::cout<<a<<"\n";
+				}
+				/* Basically, using the auto keyword in the above for loop
+				make sure the "a" in for loop is returned as float type.
+				
+				Need to take care as the data-type which is matched for "a" above
+				is copied to the vector "vec" as well. This can be particularly
+				problematic as it can change the data-type of vector for 
+				further functions also.
+				*/
+				return 0;
+			}
+		code 4:
+			
+			class Student
+			{
+				std::string m_first = "first";
+				std::String m_last = "last";
+				int m_id = 0;
+				float m_avg = 0;
+				
+			public:
+				
+				Student(){}  //default constructor
+				
+				Student(std::string first, std::string last, int id, float avg)
+					: m_first(first)
+					,m_last(last)
+					,m_id(id)
+					,m_avg(avg)
+				{
+				}     //parameterized constructor
+				int getAvg()
+				{
+					return m_avg;
+				}
+				int getID()
+				{
+					return m_id;
+				}
+				str::string  getFirst()
+				{
+					return m_first;
+				}
+				str::string getLast() const 
+				{
+					return m_last;
+				}
+				
+				void print(){
+					std::cout << m_first <<" ">m_last<<>
+				}
+			}
+			
+			int main(){
+				Student s1;
+				Student s2("dave","churchill", 1,3.14);
+				Student s3("jane", "doe", 202200001, 99.9);
+				
+				return 0;
+			}
+		
+		Don't try and change an object within a const function. Also, we cannot pass a constant argument in a function which is func that is not a const.
+		So, if you have any functions within any class which is not changing the internals of the object, it's a good practice to make it const.
+		
 	
 	Explicit typecasting
 		average = static_cast<double>(total_amount)/(total_number)
 			//Here the variable average is of type double, so we are explicitly coercing the operation on two integers into the type double
+	STL Containers:
+		Most commonly used:
+			std::vector<T>  //vector of type T
+							//T must have a default constructor
+			std::set<T>     //ordered set
+							//T must have < operator defined
+			std::map<T1,T2> //map from T1 to T2
