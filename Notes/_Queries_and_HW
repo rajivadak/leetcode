@@ -1,0 +1,21 @@
+	Git commands revision and notes
+	Difference between structure union and class
+	Virtual functions 
+	Difference between data encapsulation and abstraction
+	Difference between struct, class, unions, etc.
+	What is member initializer lists?
+	creating a vector of vectors for variable sized array
+	vector functions [eg. resize]
+	overloading a function in classes
+	virtual functions and override keyword
+	Need to understand auto keyword
+	difference betwwen call by address and call by reference
+	Why the below code will give compiler error?
+		For the below code, what is the value of "my_array[2][1]"?
+		double my_array[][] =
+		{
+            {1.2, 9.0, 3.2},
+			{9.2, 0.5, 1.5, -1.2},
+			{7.3, 7.9, 4.8} 
+        } ;
+	Scope resolution, what is and how it works?
