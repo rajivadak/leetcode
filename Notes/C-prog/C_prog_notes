@@ -115,3 +115,71 @@ C Language
 			strcpy does not check whether the source string fits in the target string or not, so strncpy is the safer choice which checks
 		strcat() & strncat()- concatenation of 2 strings
 		strcmp() & strncmp()- comparing two strings
+
+	Searching tokenizing and anlyzing strings:
+		
+		Searching a string:
+			string.h file has functions to finding a single charachter or substring using
+				strchr():
+					first argument is the string to be searched, second argument is the charachter to be searched.
+					it will return a pointer to the first position in the string where the character is found.
+					it is returned as pointer to charachter
+					If charachter is not found, it will return NULL pointer.
+					code: 
+						    char str[]="the quick brown fox";   // the string to be searched
+							char ch = 'q';                      //the charachter to be searched in string
+							char *pGot_chr = NULL;              //pointer initialized to NULL
+							pGot_chr = strchr(str,ch);         //stores address where ch is found
+
+				strstr():
+					similar to above, but searches the the instance of a substring within the given string.
+					first argument is the string to be searched, second argument is the substring to be searched.
+					code:
+						char str[]="the quick brown fox";   // the string to be searched
+						char word[] = "quick";              //the substring to be searched in string
+						char *pGot_chr = NULL;              //pointer initialized to NULL
+						pGot_chr = strstr(str,word);         //stores address where ch is found
+
+		Tokenizing a string:
+			a token is sequence of characters within a string that is bound by a delimiter(space, comma, period, etc)
+			breaking a sentences into words is called tokenizing
+			It requires 2 arguments, one is the string to be tokenized, and two is the string containing all the possible delimiter chars
+				strtok():
+				code:
+					char str[80]="Hello how are you - my name is - jason"; 
+					const char s[2] = "-";             
+					char *token;             
+					/*get the first token*/
+					token = strtok(str,s);
+					/*walk through other tokens*/
+					while(token!=NULL){
+						printf("%s\n", token);
+						token = strtok(NULL, s);
+					}
+				
+		Analyzing strings:
+				Islower()
+				isupper()
+				isalpha()
+				isdigit()
+	
+	Converting Strings:
+		To upper case to lower case and vice-versa:
+			code:
+				for(int i=0; (buf[i]=(char)toupper(buf[i])) != '\0'; ++i);
+		
+		To numbers:
+			atof(): string to double/float
+			atoi(): string to int
+			atol(): string to long
+			atoll(): string to long long
+			strtod(): string to double
+			strtof(): string to float, however, work as strtod() as well
+			strtold(): string to long double, however, work as strtod() as well
+			
+			code1:
+				#include <stdlib.h>
+				
+				char value_str[] = "98.4";
+				double value = atof(value_str);
+			
